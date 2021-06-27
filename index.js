@@ -6,6 +6,7 @@ const app = express();
 const user = require("./routes/user");
 const socket_config = require("./config/socket.io/socket");
 const acknowledge = require("./config/socket.io/acknowledge");
+const hostname = "0.0.0.0";
 app.use(express.static("public"));
 app.use(
   express.urlencoded({
@@ -20,7 +21,7 @@ PORT = 4000;
 app.use("/", access);
 app.use("/api/user", user);
 
-const server = app.listen(PORT, (err) => {
+const server = app.listen(PORT, hostname, (err) => {
   if (err) console.log(err);
   console.log(`listening on the port ${PORT}`);
 });
