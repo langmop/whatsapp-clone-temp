@@ -1,0 +1,400 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+html {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+body {
+  font-family: "Oxygen", sans-serif;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+div {
+  box-sizing: border-box;
+}
+.main-header {
+  width: 100%;
+  height: 15%;
+  background-color: #379683;
+}
+
+.main-footer {
+  width: 100%;
+  height: 85%;
+  background-color: #edf5e1;
+}
+
+main {
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  border: 2px lightslategray solid;
+  background-color: white;
+}
+
+.chat-header1 {
+  width: 35%;
+  background-color: #edf5e1;
+  height: 100%;
+  box-sizing: border-box;
+  border-right: 1.5px solid lightslategrey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chat-header2 {
+  width: 65%;
+  background-color: #edf5e1;
+  height: 100%;
+}
+
+.chat-header {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 10%;
+}
+
+.chat-main {
+  width: 100%;
+  display: flex;
+  height: 90%;
+}
+.chat-main-chat {
+  border-top: 1.5px solid lightslategrey;
+  overflow-y: scroll;
+  width: 100%;
+  background-color: #edf5e1;
+  height: 90%;
+}
+.chat-main-contacts {
+  overflow-x: scroll;
+  border-top: 1.5px solid lightslategrey;
+  border-right: 1.5px solid lightslategrey;
+  width: 35%;
+  background-color: #edf5e1;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+#output {
+  margin: 0.5em;
+  object-fit: inherit;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.display-image {
+  width: 30%;
+  height: 100%;
+  border: 2px solid #edf5e1;
+  border-radius: 50%;
+}
+
+.display-name {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-top: 5%;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+}
+
+.add-contact {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 2rem;
+  border-radius: 50%;
+  position: sticky;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  background-color: #379683;
+  left: 30%;
+  bottom: 10%;
+}
+
+.add-contact-form {
+  display: none;
+  height: 7em;
+  width: 10em;
+
+  background-color: #379683;
+  position: absolute;
+  justify-content: space-around;
+  flex-direction: column;
+  left: 10%;
+  top: 50%;
+  flex-wrap: wrap;
+}
+
+.add-contact-form1 {
+  text-align: center;
+  width: 100%;
+  height: 25%;
+}
+.add-contact-form2 {
+  text-align: center;
+  width: 100%;
+  height: 25%;
+}
+.add-contact-form3 {
+  text-align: center;
+  width: 100%;
+  height: 25%;
+}
+
+button {
+  background-color: #379683;
+  border: 2px solid #edf5e1;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  width: 100%;
+  height: 8%;
+  border: 1px solid lightslategrey;
+  background-color: white;
+}
+
+#contact-image {
+  margin-top: 0.2em;
+  height: 90%;
+  width: 20%;
+  border-radius: 50%;
+}
+
+#contact-image > img {
+  height: 100%;
+  width: 100%;
+}
+
+#contact-name {
+  font-size: 1rem;
+  text-align: center;
+  width: 80%;
+  display: inline-block;
+}
+
+.send-div {
+  width: 100%;
+  height: 10%;
+  background-color: lightyellow;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 10%;
+}
+
+.send-div-input {
+  padding: 1em;
+  width: 70%;
+  height: 100%;
+}
+
+.send-div-submit {
+  text-align: center;
+  width: 30%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 1.5em;
+}
+
+.send-div-button {
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+#send-div-input {
+  height: 100%;
+  width: 95%;
+}
+#username {
+  width: 50%;
+}
+#sender {
+  padding-right: 1rem;
+  font-weight: bold;
+  font-size: 1em;
+  color: blue;
+  text-align: right;
+  width: auto;
+}
+
+#receiver {
+  padding-left: 1rem;
+  font-weight: bold;
+  font-size: 1em;
+  color: green;
+  text-align: left;
+  width: auto;
+}
+
+.main-chat-chat {
+  flex-direction: column;
+  display: flex;
+  width: 65%;
+  height: 100%;
+}
+
+.chat-header2 {
+  padding: 2rem;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+@media (max-width: 1100px), (max-height: 1400px) {
+  .display-image {
+    height: 100%;
+    width: 15%;
+  }
+  .display-name {
+    font-size: 1.7em;
+    padding-top: 1.5em;
+    width: 75%;
+    height: 100%;
+  }
+}
+@media (max-width: 800px), (max-height: 1100px) {
+  .display-image {
+    height: 100%;
+    width: 15%;
+  }
+
+  .display-name {
+    width: 75%;
+    height: 100%;
+  }
+}
+@media (max-width: 460px), (max-height: 750px) {
+  .add-contact {
+    width: 1.3em;
+    height: 1.3em;
+    left: 30%;
+    bottom: 10%;
+  }
+  .display-image {
+    height: 30%;
+    width: 100%;
+  }
+  .display-name {
+    padding-top: 1.5em;
+    font-size: 1em;
+    height: 60%;
+    width: 100%;
+  }
+  #output {
+    margin: 0;
+  }
+  .chat-header1 {
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .chat-header1 {
+    font-size: 10px;
+  }
+} */
+.back-top {
+  background-color: #009688;
+  height: 15vh;
+}
+
+.back-main {
+  background-color: #d9dbd5;
+  height: 85vh;
+}
+
+.back-container {
+  position: relative;
+}
+
+.front-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.chat-top {
+  background-color: #ededed;
+  min-height: 50px;
+}
+
+.front-container1 {
+  top: 20px;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.border-right {
+  box-sizing: border-box;
+  border-right: 1px solid gray;
+}
+
+.profile-image {
+  margin-top: 7px;
+  height: 30px;
+  width: 30px;
+}
+
+.contacts {
+  background-color: #fff;
+  min-height: 800px;
+}
+
+.contact-table-scroll {
+  overflow-y: scroll;
+  height: 800px;
+}
+
+.message-area {
+  background-color: #e4e1de;
+  min-height: 800px;
+}
+
+.message-table-scroll {
+  overflow-y: scroll;
+  height: 750px;
+}
+
+.message-box {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+  .main-input-media {
+    display: flex;
+  }
+  .input-media {
+    width: 80%;
+  }
+  .image-media {
+    width: 20%;
+  }
+}

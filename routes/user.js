@@ -1,0 +1,14 @@
+const loggedOut = require("../middlewares/isAuth").loggedOut;
+const express = require("express");
+const Route = express.Router();
+const userInfo = require("../controller/user");
+const addContact = require("../controller/addContact");
+const showInfo = require("../controller/showInfo");
+const showAll = require("../controller/showAll");
+const showChat = require("../controller/showChat");
+Route.post("/", userInfo);
+Route.get("/", loggedOut, showInfo);
+Route.post("/add", addContact);
+Route.post("/show", showAll);
+Route.post("/showChat", showChat);
+module.exports = Route;

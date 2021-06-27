@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/access.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"
+      integrity="sha512-iZIBSs+gDyTH0ZhUem9eQ1t4DcEn2B9lHxfRMeGQhyNdSUz+rb+5A3ummX6DQTOIs1XK0gOteOg/LPtSo9VJ+w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+
+    <title>Whatsapp-clone</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-header"></div>
+      <div class="main1">Email</div>
+      <div class="main1"><input class="email" type="email" /></div>
+      <div class="main1">One time Password</div>
+      <div class="main1"><input disabled class="otp" type="text" /></div>
+      <div class="main1">
+        <button id="button-email">SEND OTP</button
+        ><button id="button-otp">SUBMIT OTP</button>
+      </div>
+
+      <div class="personal display-image">
+        <input
+          type="file"
+          accept="image/*"
+          name="image"
+          id="file"
+          onchange="loadFile(event)"
+          style="display: none"
+        />
+        <label for="file" style="cursor: pointer">
+          <img id="output" src="images/user.png" alt="" srcset=""
+        /></label>
+      </div>
+      <div class="personal display-name">
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="personal name-button"><button>Next</button></div>
+    </main>
+    <script src="js/access.js"></script>
+  </body>
+</html>
