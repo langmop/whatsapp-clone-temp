@@ -21,7 +21,7 @@ PORT = 4000;
 app.use("/", access);
 app.use("/api/user", user);
 
-const server = app.listen(PORT, hostname, (err) => {
+const server = app.listen(PORT, (err) => {
   if (err) console.log(err);
   console.log(`listening on the port ${PORT}`);
 });
