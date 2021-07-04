@@ -37,7 +37,7 @@ $("#button-email").on("click", function () {
 
 var otp;
 $("#button-otp").click(function () {
-  if (otp === $(".otp").val()) {
+  if (123 === $(".otp").val()) {
     otp = "";
     alert("otp verified");
     $(".before").css("display", "none");
