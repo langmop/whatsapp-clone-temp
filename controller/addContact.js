@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         notFound: true,
       });
     }
-    const data = jwtTokenDecoder(req.cookies.user_info, process.env.JWT_KEY);
+    const data = jwtTokenDecoder(req.cookies.user_info, "anything");
     const user = data.username;
     const result = await find(user);
     var isPresent = false;

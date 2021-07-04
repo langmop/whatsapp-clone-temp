@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 uri = process.env.URI;
-console.log(uri);
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://langmop:1234@cluster0.ghnsr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
