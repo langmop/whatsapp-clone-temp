@@ -64,7 +64,7 @@ $("#name-button").click(function () {
     function (data, success) {
       console.log(success);
       if (success) {
-        location.href = "http://localhost:4000/api/user";
+        location.href = "https://whatsapp-clone-temp.herokuapp.com/api/user";
       }
     }
   );
