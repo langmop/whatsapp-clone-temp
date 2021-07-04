@@ -1,143 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap");
-html {
-  display: flex;
-  justify-content: center;
-}
-body {
-  color: black !important;
-  margin: 0px;
-  max-width: 950px;
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  height: 90vh;
-  width: 90%;
-  justify-content: center;
-  align-items: center;
-  color: #edf5e1;
-  /* border: 2px black solid; */
+.back-container {
+  background-color: gray;
+  height: 100vh;
+  position: relative;
 }
 
-main {
-  width: 40%;
-  height: 50%;
-  /* border: 2px black solid; */
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+.before {
+  position: absolute;
+  margin-top: 150px;
+}
+
+.inside {
+  background-color: #ededed;
+  height: auto;
+  margin-top: 150px;
+}
+
+.header {
   background-color: #009688;
-  align-items: center;
+  height: 70px;
 }
 
-.main1 {
+.one {
   height: 10%;
-  /* border: 2px black solid; */
-  width: 90%;
-  margin: 0.5rem;
-  font-size: 1.5rem;
+  color: #009688;
 }
 
-input {
-  width: 100%;
-  height: 90%;
-  border-radius: 0.5em;
-  border: none;
+.three {
+  color: #009688;
 }
 
-.main-header {
-  margin-bottom: 0.25em;
-  height: 15%;
-  width: 100%;
-  background-color: #e4e1de;
+button:hover {
+  background-color: #009688 !important;
 }
 
-button {
-  margin-top: 0.5em;
-  background-color: #e4e1de;
-  color: inherit;
-  width: 101%;
-  height: 120%;
-  border-radius: 0.5em;
-  border: none;
+.after {
+  display: none;
 }
 
 #button-otp {
   display: none;
 }
 
-.display-image {
-  width: 6em;
-  height: 6em;
-  border: 2px solid #edf5e1;
-  border-radius: 50%;
-}
-
-/* .main1 {
-  display: none;
-} */
-
-img {
+.before {
   width: 100%;
-  height: 100%;
-}
-#output {
-  object-fit: inherit;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-/* #image-upload {
-  position: absolute;
-} */
-
-.personal {
-  margin-top: 1em;
 }
 
-#name {
-  height: 150%;
-  border: none;
-  text-align: center;
-}
-
-.name-button {
-  width: inherit;
-}
-
-.personal {
-  display: none;
-}
-
-/* media queries */
-
-@media (max-width: 700px), (max-height: 850px) {
-  main {
-    width: 70%;
-  }
-  .main-header {
-    height: 10%;
-  }
-
-  .main1 {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 300px) {
-  .display-name {
-    width: 80%;
-  }
-  main {
-    width: 70%;
-  }
-  .main-header {
-    height: 10%;
-  }
-
-  .main1 {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    font-size: 1em;
-  }
+.new {
+  margin-top: 100px !important;
 }

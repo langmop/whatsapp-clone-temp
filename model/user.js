@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-
+var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes();
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -9,7 +10,7 @@ const userSchema = new mongoose.Schema({
     type: String,
   },
 
-  activeAt: { type: Date, default: Date.now },
+  activeAt: { type: String, default: time },
   contacts: {
     type: [String],
     default: [],

@@ -10,6 +10,7 @@ module.exports = {
   },
   loggedOut: (req, res, next) => {
     if (jwtTokenDecoder(req.cookies.user_info, process.env.JWT_KEY) === null) {
+      console.log(req.cookies.user_info);
       res.redirect("/");
     } else {
       return next();

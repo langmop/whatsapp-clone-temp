@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-
+var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes();
 const chatSchema = new mongoose.Schema({
   sender: {
     type: String,
@@ -13,8 +14,8 @@ const chatSchema = new mongoose.Schema({
     type: String,
   },
   sendTime: {
-    type: Date,
-    default: Date.now(),
+    type: String,
+    default: time,
   },
 });
 

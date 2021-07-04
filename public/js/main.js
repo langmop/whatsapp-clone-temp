@@ -1,7 +1,8 @@
 var socket = io.connect("http://localhost:4000", {
   transports: ["websocket", "polling", "flashsocket"],
 });
-
+var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes();
 var add_contact;
 
 $(".add-contact").click(async function () {
@@ -23,7 +24,9 @@ $(".add-contact").click(async function () {
             data.name +
             '<input hidden class="contact-username" value="' +
             data.username +
-            '"><br /><small>random text</small></td><td><small>11:55</small></td></tr>"'
+            '"><br /><small>random text</small></td><td><small>' +
+            data.activeAt +
+            '</small></td></tr>"'
         );
       }
     }
@@ -45,7 +48,9 @@ $(document).ready(function () {
             data[x].name +
             '<input hidden class="contact-username" value="' +
             data[x].username +
-            '"><br /><small>random text</small></td><td><small>11:55</small></td></tr>"'
+            '"><br /><small>random text</small></td><td><small>' +
+            data[x].activeAt +
+            '</small></td></tr>"'
         );
       }
     }
@@ -84,7 +89,7 @@ $(".chat-main-contacts").on("click", ".contact", function () {
             '<tr><td><p class=" bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded">' +
               data[x].chat +
               '</p></td><td><p class="p-1 m-2 shadow-sm">' +
-              String(data[x].sendTime).slice(11, 16) +
+              data[x].sendTime +
               "</p></td></tr>"
           );
         } else {
@@ -92,7 +97,7 @@ $(".chat-main-contacts").on("click", ".contact", function () {
             '<tr><td><p class=" bg-primary p-2 mt-2 mr-5 shadow-sm text-white float-left rounded">' +
               data[x].chat +
               '</p></td><td><p class="p-1 m-2 shadow-sm">' +
-              String(data[x].sendTime).slice(11, 16) +
+              data[x].sendTime +
               "</p></td></tr>"
           );
         }
@@ -107,7 +112,7 @@ $(".send-div-button").click(function () {
     sender: $("#email").val(),
     receiver: latest,
     chat: $("#send-div-input").val(),
-    time: String(new Date().getHours()) + ":" + String(new Date().getMinutes()),
+    time: time,
   });
   $("#send-div-input").val("");
 });
@@ -120,9 +125,7 @@ socket.on("chat", function (data) {
         '<tr><td><p class=" bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded">' +
           data.chat +
           '</p></td><td><p class="p-1 m-2 shadow-sm">' +
-          String(new Date().getHours()) +
-          ":" +
-          String(new Date().getMinutes()) +
+          time +
           "</p></td></tr>"
       );
     }
@@ -132,9 +135,7 @@ socket.on("chat", function (data) {
         '<tr><td><p class=" bg-primary p-2 mt-2 mr-5 shadow-sm text-white float-left rounded">' +
           data.chat +
           '</p></td><td><p class="p-1 m-2 shadow-sm">' +
-          String(new Date().getHours()) +
-          ":" +
-          String(new Date().getMinutes()) +
+          time +
           "</p></td></tr>"
       );
     }

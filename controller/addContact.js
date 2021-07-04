@@ -3,9 +3,8 @@ const find = require("../storedProcedure/findByUsername");
 module.exports = async (req, res) => {
   try {
     const contactResult = await find(req.body.contact);
-    console.log(contactResult);
     if (contactResult == null) {
-      return res.send({
+      return res.status(404).send({
         notFound: true,
       });
     }
@@ -23,7 +22,7 @@ module.exports = async (req, res) => {
     if (isPresent == false) {
       result.contacts.push(req.body.contact);
       const savedResult = await result.save();
-      return res.send(contactResult);
+      return res.status(404).send(contactResult);
     }
 
     res.send({
@@ -31,6 +30,6 @@ module.exports = async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.send(err);
+    res.status(500).send(err);
   }
 };
