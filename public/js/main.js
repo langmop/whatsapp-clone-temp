@@ -28,7 +28,7 @@ $(".add-contact").click(async function () {
               data.name +
               '<input hidden class="contact-username" value="' +
               data.username +
-              '"><br /><small>random text</small></td><td><small>' +
+              '"><br /><small></small></td><td><small>' +
               data.activeAt +
               '</small></td></tr>"'
           );
@@ -53,7 +53,7 @@ $(document).ready(function () {
             data[x].name +
             '<input hidden class="contact-username" value="' +
             data[x].username +
-            '"><br /><small>random text</small></td><td><small>' +
+            '"><br /><small></small></td><td><small>' +
             data[x].activeAt +
             '</small></td></tr>"'
         );
