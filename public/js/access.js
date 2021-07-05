@@ -53,7 +53,6 @@ socket.on("verify", function (data) {
 });
 
 $("#name-button").click(function () {
-  alert("here");
   $.post(
     "/api/user",
     {
