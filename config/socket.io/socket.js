@@ -9,8 +9,8 @@ module.exports = function (server) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "mishragaurav656@gmail.com",
-      pass: process.env.PASS,
+      user: "langmop656@gmail.com",
+      pass: "langmop@228",
     },
   });
   const io = socket(server);
@@ -22,7 +22,7 @@ module.exports = function (server) {
         specialChars: false,
       });
       var mailOptions = {
-        from: "mishragaurav656@gmail.com",
+        from: "langmop656@gmail.com",
         to: data.handle,
         subject: "Whatsapp Demo OTP",
         text: `Your One Time Password for Whatsapp demo is 
