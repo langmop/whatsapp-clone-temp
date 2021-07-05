@@ -1,4 +1,4 @@
-var socket = io.connect("http://localhost:4000", {
+var socket = io.connect("https://whatsapp-clone-temp.herokuapp.com", {
   transports: ["websocket", "polling", "flashsocket"],
 });
 var today = new Date();
