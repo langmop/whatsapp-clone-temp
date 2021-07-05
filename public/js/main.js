@@ -7,30 +7,35 @@ var add_contact;
 
 $(".add-contact").click(async function () {
   add_contact = await prompt("enter the contact you want to add");
-  $.post(
-    "/api/user/add",
-    {
-      contact: add_contact,
-    },
-    function (data, status) {
-      if (data.notFound) {
-        alert("no contact of this name found");
-      } else if (data.alreadyAdded != null && data.alreadyAdded == true) {
-        // pass
-        console.log("iam here", data);
-      } else {
-        $(".chat-main-contacts").append(
-          '<tr class="contact">"</div><td><img src="/images/pic1.png" alt="" class="profile-image rounded-circle" /></td></input><td id = "contact-name">' +
-            data.name +
-            '<input hidden class="contact-username" value="' +
-            data.username +
-            '"><br /><small>random text</small></td><td><small>' +
-            data.activeAt +
-            '</small></td></tr>"'
-        );
+
+  if (add_contact == $("#email").val()) {
+    alert("no contact of this name found");
+  } else {
+    $.post(
+      "/api/user/add",
+      {
+        contact: add_contact,
+      },
+      function (data, status) {
+        if (data.notFound) {
+          alert("no contact of this name found");
+        } else if (data.alreadyAdded != null && data.alreadyAdded == true) {
+          // pass
+          console.log("iam here", data);
+        } else {
+          $(".chat-main-contacts").append(
+            '<tr class="contact">"</div><td><img src="/images/pic1.png" alt="" class="profile-image rounded-circle" /></td></input><td id = "contact-name">' +
+              data.name +
+              '<input hidden class="contact-username" value="' +
+              data.username +
+              '"><br /><small>random text</small></td><td><small>' +
+              data.activeAt +
+              '</small></td></tr>"'
+          );
+        }
       }
-    }
-  );
+    );
+  }
 });
 
 $(document).ready(function () {
